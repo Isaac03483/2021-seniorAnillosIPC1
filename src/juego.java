@@ -39,17 +39,18 @@ public class juego {
     }
 
     public static void presentarHeroes(){
-        for(int i = 0; i < Cantidad; i++){
+        for(int i = 0; i < ejercitoHeroes.length; i++){
             ejercitoHeroes[i].saludar();
         }
         System.out.println("");
     }
 
     public static void presentarBestias(){
-        for(int i = 0; i < Cantidad; i++){
+        for(int i = 0; i < ejercitoBestias.length; i++){
             ejercitoBestias[i].saludar();
         }
         System.out.println("");
     }
+
 
 }
