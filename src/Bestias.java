@@ -7,4 +7,6 @@ public class Bestias extends Personaje {
     public void setAtaque(){
         this.ataque = tirarDado(90);
     }
+
+    
 }

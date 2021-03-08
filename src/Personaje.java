@@ -51,4 +51,8 @@ public class Personaje {
         return (int)(Math.random()*numeroFinal);
     }
 
+    public void disminuirVida(int ataque){
+        this.vida -= ataque;
+    }
+
 }
