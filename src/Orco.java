@@ -1,9 +1,10 @@
 public class Orco extends Bestias {
 
     public Orco(String nombre){
-        super(300,45,nombre);
+        super(300,45,nombre, "Orco");
     }
     
+    @Override
     public void saludar(){
     	System.out.println("Hola soy una Bestia, mi nombre es: "+this.nombre+" y soy un Orco.");
     }

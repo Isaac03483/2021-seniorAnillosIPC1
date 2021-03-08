@@ -18,7 +18,8 @@ public class juego {
         inicializarBestias();
         presentarHeroes();
         presentarBestias();
-        
+
+        pelear();
 
     }
 
@@ -50,6 +51,27 @@ public class juego {
             ejercitoBestias[i].saludar();
         }
         System.out.println("");
+    }
+
+    public static void pelear(){
+        int nTurnos;
+        System.out.println("\tInicia el combate.");
+        nTurnos = 0;
+        do{
+            
+            System.out.println("\nTurno: "+(nTurnos+1));
+            System.out.println("Lucha entre: "+ ejercitoHeroes[nTurnos].getNombre() +" (Vida: "+ ejercitoHeroes[nTurnos].getVida() +") y "+ ejercitoBestias[nTurnos].getNombre() +" (Vida: "+ ejercitoBestias[nTurnos].getVida() +").");
+            ejercitoHeroes[nTurnos].setAtaque();
+            System.out.println("\nAtaque: "+ejercitoHeroes[nTurnos].getAtaque());
+            if(ejercitoHeroes[nTurnos].getTipo() == "Elfo" && ejercitoBestias[nTurnos].getTipo() == "Orco"){
+                ejercitoHeroes[nTurnos].rabia();
+                System.out.println("Ataque aumentado por rabia: "+ejercitoHeroes[nTurnos].getAtaque());
+            } else if(ejercitoHeroes[nTurnos].getTipo() == "Hobbit" && ejercitoBestias[nTurnos].getTipo() == "Trasgo"){
+                ejercitoHeroes[nTurnos].miedo();
+                System.out.println("Ataque disminuido por miedo: "+ejercitoHeroes[nTurnos].getAtaque());
+            }
+            nTurnos++;
+        }while(nTurnos < ejercitoHeroes.length);
     }
 
 

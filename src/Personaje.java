@@ -1,16 +1,18 @@
+import java.util.Random;
+
 public class Personaje {
 
     protected int vida;
     protected int armadura;
-    protected int ataque;
+    protected int ataque =0;
     protected String nombre;
+    protected String tipo;
 
-    public Personaje(int vida, int armadura, int ataque, String nombre) {
+    public Personaje(int vida, int armadura, String nombre, String tipo) {
         this.vida = vida;
-        this.ataque = ataque;
         this.armadura = armadura;
         this.nombre = nombre;
-
+        this.tipo = tipo;
     }
 
     public void saludar(){
@@ -31,6 +33,22 @@ public class Personaje {
 
     public String getNombre() {
         return this.nombre;
+    }
+
+    public String getTipo(){
+        return this.tipo;
+    }
+
+    public void rabia(){
+        this.ataque = this.ataque + 10;
+    }
+
+    public void miedo(){
+        this.ataque -=5;
+    }
+
+    public int tirarDado(int numeroFinal){
+        return (int)(Math.random()*numeroFinal);
     }
 
 }
