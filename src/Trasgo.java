@@ -1,3 +1,4 @@
+
 public class Trasgo extends Bestias{
 
     public Trasgo(String nombre){

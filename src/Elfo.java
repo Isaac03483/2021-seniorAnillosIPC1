@@ -1,3 +1,4 @@
+
 public class Elfo extends Heroes {
 
     public Elfo(String nombre){
@@ -7,6 +8,11 @@ public class Elfo extends Heroes {
     @Override
     public void saludar(){
         System.out.println("Hola soy un Heroe, mi nombre es: " + this.nombre+" y soy un Elfo.");
+    }
+
+    @Override
+    public void cambiarAtaque(){
+        this.ataque = this.ataque + 10;
     }
 
 

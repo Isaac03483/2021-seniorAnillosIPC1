@@ -1,3 +1,4 @@
+
 public class Bestias extends Personaje {
 
     public Bestias(int vida, int armadura, String nombre, String tipo){
