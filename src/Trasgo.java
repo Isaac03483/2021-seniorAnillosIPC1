@@ -2,7 +2,7 @@ public class Trasgo extends Bestias{
 
     private static int instanciaTrasgo=0;
     public Trasgo(String nombre){
-        super(5000,46,nombre);
+        super(325,46,nombre);
         Trasgo.instanciaTrasgo++;
     }
     

@@ -54,6 +54,7 @@ public class Pelea{
             }
             heroes--;
             ejercito[heroes] = null;
+            
         } else if (ejercito[0] instanceof Bestias){
             for(int i = n; i < bestias-1; i++){
                 ejercito[i] = ejercito[i+1];

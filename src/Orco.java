@@ -2,7 +2,7 @@ public class Orco extends Bestias {
 
     private static int instanciaOrco=0;
     public Orco(String nombre){
-        super(1000,45,nombre);
+        super(300,45,nombre);
         Orco.instanciaOrco++;
     }
     
