@@ -1,12 +1,19 @@
 
 public class Bestias extends Personaje {
 
-    public Bestias(int vida, int armadura, String nombre, String tipo){
-        super(vida, armadura,nombre,tipo);
+    private static int instanciaBestias=0;    
+    public Bestias(int vida, int armadura, String nombre){
+        super(vida, armadura,nombre);
+        Bestias.instanciaBestias++;
     }
     
+
     public void setAtaque(){
         this.ataque = tirarDado(90);
+    }
+
+    public static int getInstancia(){
+        return Bestias.instanciaBestias;
     }
 
     

@@ -7,14 +7,12 @@ public class Personaje {
     protected int armadura;
     protected int ataque =0;
     protected String nombre;
-    protected String tipo;
     private static int instanciaPersonaje=0;
 
-    public Personaje(int vida, int armadura, String nombre, String tipo) {
+    public Personaje(int vida, int armadura, String nombre) {
         this.vida = vida;
         this.armadura = armadura;
         this.nombre = nombre;
-        this.tipo = tipo;
         Personaje.instanciaPersonaje++;
     }
 
@@ -26,7 +24,7 @@ public class Personaje {
         return this.vida;
     }
 
-    public int getAtaque() {
+    public int getAtaque(Personaje defensor) {
         return this.ataque;
     }
 
@@ -38,10 +36,6 @@ public class Personaje {
         return this.nombre;
     }
 
-    public String getTipo(){
-        return this.tipo;
-    }
-
     public static int getInstancia(){
         return Personaje.instanciaPersonaje;
     }
@@ -50,8 +44,28 @@ public class Personaje {
         return (int)(Math.random()*numeroFinal);
     }
 
-    public void disminuirVida(int ataque){
+    public void disminuirVida(double ataque){
         this.vida -= ataque;
+    }
+
+    public void recibirAtaque(Personaje atacante){
+        System.out.println("\nAtaque entre: "+atacante.getNombre()+" (Vida: "+atacante.getVida()+") y "+this.nombre+" (Vida "+this.vida+").");
+        if(atacante instanceof Heroes){
+            ((Heroes)atacante).setAtaque();
+        } else if (atacante instanceof Bestias){
+            ((Bestias)atacante).setAtaque();
+        }
+
+        
+        int ataque = atacante.getAtaque(this);
+        System.out.println("Ataque: "+ataque);
+        if(ataque > this.armadura){
+            ataque -= this.armadura;
+            this.disminuirVida(ataque);
+        }else {
+            System.out.println("Ataque fallido");
+        }    
+        System.out.println("\nFin ataque entre: "+atacante.getNombre()+" (Vida: "+atacante.getVida()+") y "+this.nombre+" (Vida "+this.vida+").");
     }
 
 }

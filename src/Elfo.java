@@ -1,8 +1,9 @@
-
 public class Elfo extends Heroes {
-
+    
+    private static int instanciaElfo=0;
     public Elfo(String nombre){
-        super(250, 60, nombre, "Elfo");
+        super(250, 60, nombre);
+        Elfo.instanciaElfo++;
     }
 
     @Override
@@ -11,8 +12,16 @@ public class Elfo extends Heroes {
     }
 
     @Override
-    public void cambiarAtaque(){
-        this.ataque = this.ataque + 10;
+    public int getAtaque(Personaje defensor){
+       if(defensor instanceof  Orco){
+           System.out.println("Furia élfica xd");
+           return this.ataque+10;
+       }
+       return this.ataque;
+    }
+
+    public static int getInstancia(){
+        return Elfo.instanciaElfo;
     }
 
 

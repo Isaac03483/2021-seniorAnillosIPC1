@@ -1,9 +1,11 @@
 
 public class Hobbit extends Heroes {
 
+    private static int instanciaHobbit=0;
     /* constructor */
     public Hobbit(String nombre){
-        super(200, 40, nombre, "Hobbit");
+        super(200, 40, nombre);
+        Hobbit.instanciaHobbit++;
     }
 
     @Override
@@ -12,8 +14,15 @@ public class Hobbit extends Heroes {
     }
 
     @Override
-    public void cambiarAtaque(){
-        this.ataque -=5;
+    public int getAtaque(Personaje defensor){
+        if(defensor instanceof Trasgo){
+            System.out.println("Miedo de Hobbit :'v");
+            return this.ataque -5;
+        }
+        return this.ataque;
+    }
+    public static int getInstancia(){
+        return Hobbit.instanciaHobbit;
     }
     
     

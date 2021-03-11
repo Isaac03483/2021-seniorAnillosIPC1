@@ -19,8 +19,13 @@ public class juego {
         inicializarBestias();
         presentarHeroes();
         presentarBestias();
-        System.out.println("Número de personajes: "+ Personaje.getInstancia());
-        System.out.println("Número de héroes: "+Heroes.getInstancia());
+        System.out.println("Número de Personajes: "+ Personaje.getInstancia());
+        System.out.println("Número de Héroes: "+Heroes.getInstancia());
+        System.out.println("Número de Elfos: "+ Elfo.getInstancia());
+        System.out.println("Número de Hobbits: "+Hobbit.getInstancia());
+        System.out.println("Número de Humanos: "+ Humano.getInstancia());
+        System.out.println("Número de Trasgos: "+Trasgo.getInstancia());
+        System.out.println("Número de Orcos: "+ Orco.getInstancia());
         Pelea.pelear(ejercitoHeroes, ejercitoBestias);
 
     }

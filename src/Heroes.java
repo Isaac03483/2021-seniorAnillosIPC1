@@ -3,8 +3,8 @@ public class Heroes extends Personaje {
 
     private static int instanciaHeroe=0;
 
-    public Heroes(int vida, int armadura, String nombre, String tipo){
-        super(vida, armadura, nombre, tipo);
+    public Heroes(int vida, int armadura, String nombre){
+        super(vida, armadura, nombre);
         Heroes.instanciaHeroe++;
     }
 
@@ -18,9 +18,6 @@ public class Heroes extends Personaje {
         }
     }
 
-    public void cambiarAtaque(){
-        
-    }
     public static int getInstancia(){
         return Heroes.instanciaHeroe;
     }
