@@ -44,6 +44,7 @@ public class Pelea{
         } else {
             System.out.println("Ejercito de Heroes aniquilado. Ganan las bestias.");
         }
+        System.out.println("Fin programa");
     }
 
     public static void eliminarJugador(Personaje ejercito[], int n){
