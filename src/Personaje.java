@@ -58,13 +58,25 @@ public class Personaje {
 
         
         int ataque = atacante.getAtaque(this);
-        System.out.println("Ataque: "+ataque);
-        if(ataque > this.armadura){
-            ataque -= this.armadura;
-            this.disminuirVida(ataque);
-        }else {
-            System.out.println("Ataque fallido");
-        }    
+        System.out.println("Ataque: "+ataque
+        +"\nDefensa: "+this.armadura);
+
+        if(atacante instanceof Orco){
+            System.out.println("Fuerza descomunal de orco, armadura enemiga disminuida 10 unidades");
+            if(ataque > (this.armadura-10)){
+                ataque -= (this.armadura-10);
+                this.disminuirVida(ataque); 
+            }else {
+                System.out.println("Ataque fallido");
+            }
+        } else {
+            if(ataque > this.armadura){
+                ataque -= this.armadura;
+                this.disminuirVida(ataque);
+            }else {
+                System.out.println("Ataque fallido");
+            }
+        }
         System.out.println("\nFin ataque entre: "+atacante.getNombre()+" (Vida: "+atacante.getVida()+") y "+this.nombre+" (Vida "+this.vida+").");
     }
 
