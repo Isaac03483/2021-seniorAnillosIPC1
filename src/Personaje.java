@@ -1,6 +1,3 @@
-
-import java.util.Random;
-
 public class Personaje {
 
     protected int vida;
